@@ -1,0 +1,43 @@
+
+<mat-toolbar fxLayout="row" color="primary">
+
+    <button mat-icon-button [routerLink]="['/lista']">
+        <mat-icon>home</mat-icon>
+        <span class="iconText">ToDoList-V3</span>
+    </button>
+
+    <span fxFlex></span>
+    <button mat-button fxShow.xs=false fxShow.sm=false [routerLink]="['/lista']"> 
+        <mat-icon class="mr">sticky_note_2</mat-icon>
+        Lista tareas
+    </button>
+    <button mat-button fxShow.xs=true [routerLink]="['/formulario']">
+        <mat-icon class="mr">note_add</mat-icon>
+        Agregar tarea
+    </button>
+    <button mat-button fxShow.xs=false [routerLink]="['/historico']">
+        <mat-icon class="mr">task_alt</mat-icon>
+        Tareas completadas
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs fxShow.sm>
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+        <ng-container>
+            <div fxShow.xs=true>
+                <button mat-menu-item [routerLink]="['/lista']">
+                    <mat-icon class="mr">sticky_note_2</mat-icon>
+                    Lista tareas
+                </button>
+            </div>
+        </ng-container>
+        <ng-container>
+            <div fxShow.xs=true fxShow.sm=false>
+                <button mat-menu-item [routerLink]="['/historico']">
+                    <mat-icon class="mr">task_alt</mat-icon>
+                    Tareas completadas
+                </button>
+            </div>
+        </ng-container>
+    </mat-menu>
+</mat-toolbar>
