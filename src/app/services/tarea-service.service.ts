@@ -23,6 +23,7 @@ export class TareaServiceService {
   }
 
   completarTarea(task: Tarea){
+    task.fecha = Date.now();
     this.afs.collection('completed').add(task);
     this.afs.doc('todolist/' + task.id).delete();
   }

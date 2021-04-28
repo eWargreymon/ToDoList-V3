@@ -2,7 +2,7 @@ export interface Tarea{
     id?: string;
     titulo: string;
     desc: string;
-    fecha: Date;
+    fecha: number;
     estado: number;
     prioridad: number;
 }

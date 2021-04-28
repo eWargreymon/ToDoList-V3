@@ -2,17 +2,19 @@
     <div class="titulo">
         <h1>Lista de Tareas pendientes</h1>
     </div>
-    <div class="controls">
-        <p>Ordenar por:</p>
-        <button class="btn btn-sm" (click)="ordenar(0)" [ngClass]="{'active':order===0, 'basic':order!=0}">Título</button>
-        <button class="btn btn-sm" (click)="ordenar(1)" [ngClass]="{'active':order===1, 'basic':order!=1}">Fecha</button>
-        <button class="btn btn-sm" (click)="ordenar(2)" [ngClass]="{'active':order===2, 'basic':order!=2}">Prioridad</button>
-    </div>
-    <div class="controls">
-        <p>Filtrar por:</p>
-        <button class="btn btn-sm" (click)="filtrar(0)" [ngClass]="{'active':filter===0, 'basic':filter!=0}">Todas</button>
-        <button class="btn btn-sm" (click)="filtrar(1)" [ngClass]="{'active':filter===1, 'basic':filter!=1}">Pendientes</button>
-        <button class="btn btn-sm" (click)="filtrar(2)" [ngClass]="{'active':filter===2, 'basic':filter!=2}">En proceso</button>
+    <div class="filterOrder">
+        <div class="controls">
+            <p>Ordenar por:</p>
+            <button mat-flat-button color="primary" class="controlButtons" (click)="ordenar(0)" [ngClass]="{'active':order===0}">Título</button>
+            <button mat-flat-button color="primary" class="controlButtons" (click)="ordenar(1)" [ngClass]="{'active':order===1}">Fecha</button>
+            <button mat-flat-button color="primary" class="controlButtons" (click)="ordenar(2)" [ngClass]="{'active':order===2}">Prioridad</button>
+        </div>
+        <div class="controls">
+            <p>Filtrar por:</p>
+            <button mat-flat-button color="primary" class="controlButtons" (click)="filtrar(0)" [ngClass]="{'active':filter===0}">Todas</button>
+            <button mat-flat-button color="primary" class="controlButtons" (click)="filtrar(1)" [ngClass]="{'active':filter===1}">Pendientes</button>
+            <button mat-flat-button color="primary" class="controlButtons" (click)="filtrar(2)" [ngClass]="{'active':filter===2}">En proceso</button>
+        </div>
     </div>
 </div>
 
@@ -38,7 +40,7 @@
                 <p>Prioridad: {{tarea.prioridad}}</p>
                 <p *ngIf="tarea.estado===0">Pendiente</p>
                 <p *ngIf="tarea.estado===1">En proceso</p>
-                <p>Creada: {{tarea.fecha | date:'MMM d, y, hh:mm a'}}</p>
+                <p>Creada: {{tarea.fecha | date:'MMM d, y, HH:mm'}}</p>
             </div>
         </div>
         <div class="bot-side">

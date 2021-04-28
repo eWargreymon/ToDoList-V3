@@ -4,14 +4,23 @@
     align-items: center;
 }
 
-.basic{
-    background-color: #3366cc; 
-    color: white;
+.filterOrder{
+    display: flex;
+    margin-left: 1em;
+}
+
+.controls:last-child{
+    margin-left: 1rem;
 }
 
 .active{
     background-color: #ff4d88;
     color: white;
+}
+
+.controlButtons{
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .noTareas{
