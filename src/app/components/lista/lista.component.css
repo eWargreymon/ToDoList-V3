@@ -39,10 +39,22 @@
     margin: 5px 5px 5px 0;
     padding: 5px 5px;
     text-align: center;
+    position: relative;
 }
 
 .task{
     margin-top: 5px;
+}
+
+
+.fixr{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.fixr mat-icon{
+    font-size: 1rem;
 }
 
 .task h1{
@@ -58,14 +70,28 @@
 }
 
 .proceso{
-    background-color: lightcyan;
-    border: 1px solid cyan;
+    background-color: #F3A8F5;
+    border: 1px solid #E39EE5;
 }
 
 .incompleta{
     background-color: cornsilk;
     border: 1px solid yellow;
 }
+
+.white{
+    color: white;
+}
+
+.pause{
+    background-color: #7000cc;
+}
+
+.complete{
+    background-color: #ff6600;
+}
+
+
 
 .filtroPendientes{
     display: none;

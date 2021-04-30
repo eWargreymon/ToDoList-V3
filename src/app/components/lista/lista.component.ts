@@ -64,6 +64,10 @@ export class ListaComponent implements OnInit {
     this.filter = filtro;
   }
 
+  borrarTarea(id: string){
+    this.tareasService.borrarTarea('todolist',id);
+  }
+
   completar(task: Tarea){
     this.tareasService.completarTarea(task);
   }

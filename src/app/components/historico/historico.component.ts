@@ -32,7 +32,7 @@ export class HistoricoComponent implements OnInit {
   }
 
   eliminar(id: string){
-    this.tareasService.borrarTarea(id);
+    this.tareasService.borrarTarea('completed',id);
   }
 
 }

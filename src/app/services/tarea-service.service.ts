@@ -32,8 +32,8 @@ export class TareaServiceService {
     this.afs.doc('todolist/' + task.id).delete();
   }
 
-  borrarTarea(id: string){
-    return this.afs.doc('completed/' + id).delete();
+  borrarTarea(lista: string, id: string){
+    return this.afs.doc(lista + '/' + id).delete();
   }
 
   inProcess(id: string, process: boolean){
