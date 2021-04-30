@@ -14,11 +14,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
-import { MatDividerModule } from "@angular/material/divider";
 import { HistoricoComponent } from './components/historico/historico.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from "@angular/material/menu";
+import { MatDialogModule } from "@angular/material/dialog";
+import { DialogComponent } from './components/dialog/dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatInputModule, } from "@angular/material/input";
+
 
 @NgModule({
   declarations: [
@@ -26,6 +31,7 @@ import { MatMenuModule } from "@angular/material/menu";
     FormularioComponent,
     ListaComponent,
     HistoricoComponent,
+    DialogComponent,
     ToolbarComponent
   ],
   imports: [
@@ -37,10 +43,14 @@ import { MatMenuModule } from "@angular/material/menu";
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatDividerModule,
     FlexLayoutModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatDividerModule,
+    MatInputModule
   ],
+  entryComponents: [DialogComponent],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })

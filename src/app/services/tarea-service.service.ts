@@ -22,6 +22,10 @@ export class TareaServiceService {
     return this.afs.collection('todolist').add(payload);
   }
 
+  updateTarea(payload: Tarea){
+    return this.afs.doc('todolist/'+ payload['id']).update(payload);
+  }
+
   completarTarea(task: Tarea){
     task.fecha = Date.now();
     this.afs.collection('completed').add(task);

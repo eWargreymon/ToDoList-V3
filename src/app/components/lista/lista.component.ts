@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Tarea } from 'src/app/models/tarea.model';
 import { TareaServiceService } from 'src/app/services/tarea-service.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-lista',
@@ -15,6 +17,7 @@ export class ListaComponent implements OnInit {
 
   constructor(
     private tareasService: TareaServiceService,
+    public dialog: MatDialog
   )
   { 
     this.tareas = [];
@@ -22,7 +25,7 @@ export class ListaComponent implements OnInit {
     this.filter = 0;
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.getAll();
   }
 
@@ -35,6 +38,7 @@ export class ListaComponent implements OnInit {
         } as Tarea;
       });
     });
+    this.ordenar(this.order);
   }
 
   ordenar(estilo: number){
@@ -60,10 +64,6 @@ export class ListaComponent implements OnInit {
     this.filter = filtro;
   }
 
-  edit(tarea: Tarea){
-    
-  }
-
   completar(task: Tarea){
     this.tareasService.completarTarea(task);
   }
@@ -74,5 +74,29 @@ export class ListaComponent implements OnInit {
     } else {
       this.tareasService.inProcess(tarea.id,false);
     }
+  }
+
+  openDialog(tarea: any){
+
+    const tareaUp = {
+      titulo: tarea.titulo,
+      descripcion: tarea.descripcion,
+      prioridad: tarea.prioridad,
+      estado: tarea.estado,
+      id: tarea.id,
+      fecha: tarea.fecha
+    }
+    // console.log(tareaUp);
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data:tareaUp,
+      width:'350px'
+    });
+    dialogRef.afterClosed().subscribe(res => {
+      if(!res){
+        console.log(res);
+      } else {
+        this.tareasService.updateTarea(res);
+      }
+    });
   }
 }

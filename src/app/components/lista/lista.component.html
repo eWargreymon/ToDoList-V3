@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<mat-divider class="mt-1 mb-3"></mat-divider>
+<!-- <mat-divider class="mt-1 mb-3"></mat-divider> -->
 
 <h3 *ngIf="tareas.length===0" class="noTareas">No hay tareas pendientes, ¡Felicidades!</h3>
 
@@ -46,7 +46,7 @@
         <div class="bot-side">
             <button *ngIf="tarea.estado===0" class=" btn btn-sm btn-success mr-1" (click)="proceso(tarea)">Comenzar</button>
             <button *ngIf="tarea.estado===1" class=" btn btn-sm btn-warning mr-1" (click)="proceso(tarea)">Pausar</button>
-            <button class=" btn btn-sm btn-dark mr-1" (click)="editar(tarea)">Editar</button>
+            <button class=" btn btn-sm btn-dark mr-1" (click)="openDialog(tarea)">Editar</button>
             <button class=" btn btn-sm btn-info" (click)="completar(tarea)">Completar</button>
         </div>
     </div>   
