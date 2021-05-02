@@ -4,7 +4,8 @@
     <form>
         <mat-form-field>
                 <label for="titulo">Título</label>
-                <input 
+                <input
+                    matIn
                     type="text" 
                     id="titulo" 
                     formControlName="titulo" 
@@ -43,6 +44,6 @@
     </form>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button class="mat-raised-button mat-accent" mat-dialog-close mat-dialog-close="false">Cerrar</button>
+    <button class="mat-raised-button mat-accent mr-2" mat-dialog-close mat-dialog-close="false">Cerrar</button>
     <button class="mat-raised-button mat-primary" type="submit" [mat-dialog-close]="formValues()">Actualizar</button>
 </mat-dialog-actions>

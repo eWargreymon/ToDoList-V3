@@ -1,18 +1,3 @@
-.top{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.filterOrder{
-    display: flex;
-    margin-left: 1em;
-}
-
-.controls:last-child{
-    margin-left: 1rem;
-}
-
 .active{
     background-color: #ff4d88;
     color: white;
@@ -65,7 +50,6 @@
     padding-top: 10px;
     padding-bottom: 1px;
     margin-bottom: 8px;
-    background-color: lightgrey;
     font-size: small;
 }
 
@@ -74,9 +58,17 @@
     border: 1px solid #E39EE5;
 }
 
+.proceso-info{
+    background-color: #f9d2f9;
+}
+
 .incompleta{
     background-color: cornsilk;
     border: 1px solid yellow;
+}
+
+.incompleta-info{
+    background-color: #FFF5EE;
 }
 
 .white{

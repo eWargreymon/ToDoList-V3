@@ -93,7 +93,7 @@ export class ListaComponent implements OnInit {
     // console.log(tareaUp);
     const dialogRef = this.dialog.open(DialogComponent, {
       data:tareaUp,
-      width:'350px'
+      width:'400px'
     });
     dialogRef.afterClosed().subscribe(res => {
       if(!res){

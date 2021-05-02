@@ -1,21 +1,20 @@
-<div class="top mt-3">
-    <div class="titulo">
+<div class="row justify-content-center mt-3">
+    <div class="titulo col-md-4">
         <h1>Lista de Tareas pendientes</h1>
     </div>
-    <div class="filterOrder">
-        <div class="controls">
+        <div class="controls col-md-4">
             <p>Ordenar por:</p>
             <button mat-flat-button color="primary" class="controlButtons" (click)="ordenar(0)" [ngClass]="{'active':order===0}">Título</button>
             <button mat-flat-button color="primary" class="controlButtons" (click)="ordenar(1)" [ngClass]="{'active':order===1}">Fecha</button>
             <button mat-flat-button color="primary" class="controlButtons" (click)="ordenar(2)" [ngClass]="{'active':order===2}">Prioridad</button>
         </div>
-        <div class="controls">
+        <div class="controls col-md-4">
             <p>Filtrar por:</p>
             <button mat-flat-button color="primary" class="controlButtons" (click)="filtrar(0)" [ngClass]="{'active':filter===0}">Todas</button>
             <button mat-flat-button color="primary" class="controlButtons" (click)="filtrar(1)" [ngClass]="{'active':filter===1}">Pendientes</button>
             <button mat-flat-button color="primary" class="controlButtons" (click)="filtrar(2)" [ngClass]="{'active':filter===2}">En proceso</button>
         </div>
-    </div>
+
 </div>
 
 <mat-divider class="mt-1 mb-3"></mat-divider>
@@ -41,7 +40,11 @@
                 <h4>{{tarea.descripcion}}</h4>
             </div>
             
-            <div class="task-info">
+            <div class="task-info" 
+            [ngClass]="{
+                'incompleta-info':tarea.estado===0,
+                'proceso-info':tarea.estado===1}"
+            >
                 <p>Prioridad: {{tarea.prioridad}}</p>
                 <p *ngIf="tarea.estado===0">Pendiente</p>
                 <p *ngIf="tarea.estado===1">En proceso</p>
