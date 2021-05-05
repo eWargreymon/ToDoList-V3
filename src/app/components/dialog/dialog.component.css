@@ -1,0 +1,14 @@
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+.formbody{
+    padding: 1em;
+    background-color: #99ffcc;
+}
+
+.error{
+    font-size: smaller;
+    color: tomato;
+}

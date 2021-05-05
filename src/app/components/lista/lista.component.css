@@ -75,15 +75,21 @@
     color: white;
 }
 
+.start{
+    background-color: #ff1a66;
+}
+
+.edit{
+    background-color: #005ce6;
+}
+
 .pause{
-    background-color: #7000cc;
+    background-color: #ff9933;
 }
 
 .complete{
-    background-color: #ff6600;
+    background-color: #2eb82e;
 }
-
-
 
 .filtroPendientes{
     display: none;

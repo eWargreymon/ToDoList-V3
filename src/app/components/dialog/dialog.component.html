@@ -1,27 +1,27 @@
-<h2 mat-dialog-title>Editar tarea</h2>
+<h2 mat-dialog-title class="title">Editar tarea</h2>
 
-<mat-dialog-content [formGroup]="formulario">
+<mat-dialog-content [formGroup]="formulario" class="formbody">
+
     <form>
-        <mat-form-field>
-                <label for="titulo">Título</label>
-                <input
-                    matIn
-                    type="text" 
-                    id="titulo" 
-                    formControlName="titulo" 
-                    class="form-control" 
-                    placeholder="Introduce un título corto"
-                    [(ngModel)]="tarea.titulo"
-                >
-                    <div class="error" *ngIf="formulario.controls.titulo.errors?.required && formulario.controls.titulo.touched">
-                    Este campo es requerido
-                </div>
-                <div class="error" *ngIf="formulario.controls.titulo.errors?.maxlength && formulario.controls.titulo.touched">
-                    No puede tener más de 15 caracteres
-                </div>
-        </mat-form-field>
-        <mat-form-field>
-            <label for="desc">Descripción</label>
+        <div class="form-group">
+            <label for="titulo" class="form-label">Título</label>
+            <input
+                type="text" 
+                id="titulo" 
+                formControlName="titulo" 
+                class="form-control" 
+                placeholder="Introduce un título corto"
+                [(ngModel)]="tarea.titulo"
+            >
+            <div class="error" *ngIf="formulario.controls.titulo.errors?.required && formulario.controls.titulo.touched">
+                Este campo es requerido
+            </div>
+            <div class="error" *ngIf="formulario.controls.titulo.errors?.maxlength && formulario.controls.titulo.touched">
+                No puede tener más de 15 caracteres
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="desc" class="form-label">Descripción</label>
             <input 
                 type="text" 
                 id="desc" 
@@ -30,9 +30,9 @@
                 placeholder="Introduce una descripción"
                 [(ngModel)]="tarea.descripcion"
             >
-        </mat-form-field>
-        <mat-form-field>
-            <label>Prioridad</label>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Prioridad</label>
             <select 
                 class="form-control" 
                 formControlName="prioridad"
@@ -40,7 +40,7 @@
             >
                 <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" value="{{i}}">{{i}}</option>
             </select>
-        </mat-form-field>
+        </div>
     </form>
 </mat-dialog-content>
 <mat-dialog-actions>
