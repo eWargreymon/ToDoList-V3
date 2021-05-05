@@ -21,7 +21,7 @@ export class ListaComponent implements OnInit {
   )
   { 
     this.tareas = [];
-    this.order = 0;
+    this.order = 3;
     this.filter = 0;
   }
 
@@ -38,7 +38,6 @@ export class ListaComponent implements OnInit {
         } as Tarea;
       });
     });
-    this.ordenar(this.order);
   }
 
   ordenar(estilo: number){
